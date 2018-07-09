@@ -19,4 +19,61 @@ body {
   display: inline-block;
 }
 
+/* list */
+.boxed {
+  border: 1px solid #ccc;
 
+  height: 140px;
+}
+.textAlignCenter {
+  text-align: center;
+}
+.padding25 {
+  padding: 25px;
+}
+
+.float_right {
+  float: right;
+}
+.card-body {
+  padding: 0rem;
+}
+.cards {
+  padding: 15px;
+}
+
+.rounded-img {
+  width: 50px;
+  border-radius: 50%;
+  margin-bottom: 25px;
+}
+.colorccc {
+  color: #ccc;
+}
+
+.content {
+  padding: 10px;
+  display: inline-block;
+}
+
+.inline-img {
+  display: inline-block;
+}
+
+.inline-text {
+  display: inline-block;
+}
+
+/*  usernew*/
+.width150 {
+  width: 150px !important;
+}
+
+.halfrounded {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #1a73e8;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  background-color: #1a73e8;
+}
