@@ -72,8 +72,12 @@ body {
 .halfrounded {
   margin-top: 20px;
   margin-bottom: 20px;
-  border: 1px solid #1a73e8;
+  border: 1px solid #d6e9ff;
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
-  background-color: #1a73e8;
+  background-color: #d6e9ff;
+}
+
+.labelling {
+  margin-top: 10px;
 }
