@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 
 class User extends Component {
   render() {
-    console.log(this.props);
     return (
       <div className="cards">
         <div className="card-body boxed">
@@ -31,13 +30,12 @@ class User extends Component {
             </button>
           </div>
           <br />
-
-          <br />
           <div className="content">
             <div className="inline-img">
               <img
                 src="https://dummyimage.com/400x400/000/fff"
                 className="rounded-img"
+                alt=""
               />
             </div>
             &nbsp;&nbsp;&nbsp;

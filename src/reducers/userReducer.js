@@ -14,8 +14,11 @@ const userReducer = (state = [], action) => {
         if (user.id === action.id) {
           return {
             ...user,
-            title: action.data.newTitle,
-            message: action.data.newMessage,
+            name: action.data.newName,
+            email: action.data.newEmail,
+            facebook: action.data.newFacebook,
+            twitter: action.data.newTwitter,
+            linkedin: action.data.newLinkedIn,
             editing: !user.editing
           };
         } else return user;

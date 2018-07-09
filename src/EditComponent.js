@@ -1,54 +1,27 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import { Link } from "react-router-dom";
-import Header from "./Header";
-
-class UsersNew extends Component {
-  handleSubmit = e => {
+class EditComponent extends Component {
+  handleEdit = e => {
     e.preventDefault();
-    const name = this.getName.value;
-    const email = this.getEmail.value;
-    const facebook = this.getFacebook.value;
-    const twitter = this.getTwitter.value;
-    const linkedin = this.getLinkedIn.value;
-
+    const newName = this.getName.value;
+    const newEmail = this.getEmail.value;
+    const newFacebook = this.getFacebook.value;
+    const newTwitter = this.getTwitter.value;
+    const newLinkedIn = this.getLinkedIn.value;
     const data = {
-      id: new Date(),
-      name,
-      email,
-      facebook,
-      twitter,
-      linkedin,
-      editing: false
+      newName,
+      newEmail,
+      newFacebook,
+      newTwitter,
+      newLinkedIn
     };
-    this.props.dispatch({
-      type: "ADD_USER",
-      data
-    });
-
-    this.getName.value = "";
-    this.getEmail.value = "";
-    this.getFacebook.value = "";
-    this.getTwitter.value = "";
-    this.getLinkedIn.value = "";
+    this.props.dispatch({ type: "UPDATE", id: this.props.user.id, data: data });
   };
-
   render() {
     return (
       <div>
-        <Header />
-        <div className="row">
-          <div className="col-md-2 col-6">
-            <div className="halfrounded">
-              <p style={{ marginTop: "1rem", backgroundColor: "#D6E9FF" }}>
-                Personal Info
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleEdit}>
           <div className="container">
             <div className="row">
               <div className="col-md-4 col-12">
@@ -59,6 +32,7 @@ class UsersNew extends Component {
                   type="text"
                   ref={input => (this.getName = input)}
                   className="form-control"
+                  defaultValue={this.props.user.name}
                 />
               </div>
             </div>
@@ -70,6 +44,7 @@ class UsersNew extends Component {
                   required
                   type="text"
                   ref={input => (this.getEmail = input)}
+                  defaultValue={this.props.user.email}
                   className="form-control"
                 />
               </div>
@@ -83,6 +58,7 @@ class UsersNew extends Component {
                   type="text"
                   ref={input => (this.getFacebook = input)}
                   className="form-control"
+                  defaultValue={this.props.user.facebook}
                 />
               </div>
 
@@ -94,6 +70,7 @@ class UsersNew extends Component {
                   type="text"
                   ref={input => (this.getTwitter = input)}
                   className="form-control"
+                  defaultValue={this.props.user.twitter}
                 />
               </div>
 
@@ -105,6 +82,7 @@ class UsersNew extends Component {
                   type="text"
                   ref={input => (this.getLinkedIn = input)}
                   className="form-control"
+                  defaultValue={this.props.user.linkedin}
                 />
               </div>
             </div>
@@ -116,27 +94,13 @@ class UsersNew extends Component {
                 className="btn btn-primary"
                 type="submit"
                 style={{ width: "150px", backgroundColor: "#4397FF" }}>
-                Save
+                Update
               </button>
-              &nbsp;&nbsp;&nbsp;&nbsp;
-              <Link
-                to="/"
-                className="btn btn-primary"
-                style={{ width: "150px", backgroundColor: "#4397FF" }}>
-                Next
-              </Link>
             </div>
           </div>
         </form>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
       </div>
     );
   }
 }
-
-export default connect()(UsersNew);
+export default connect()(EditComponent);
